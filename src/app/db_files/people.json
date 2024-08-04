@@ -1,0 +1,16 @@
+[
+    {
+      "name": "George Lucas",
+      "birthDate": "1944-04-15",
+      "country": "USA",
+      "biography": "Vlastním jménem George Walton Lucas, Jr. se narodil 14. května 1944 v Modestu, Kalifornii. Zde také vystudoval proslulou University of Southern California (USC)...",
+      "role": "director"
+    },
+    {
+      "name": "Irvin Kershner",
+      "birthDate": "1923-04-29",
+      "country": "USA",
+      "biography": "Irvin Kershner se narodil ve Filadelfii rodičům židovského původu. Jeho uměleckým zaměřením bylo zpočátku hraní na hudební nástroje...",
+      "role": "director"
+    }
+    ]
