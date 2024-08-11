@@ -1,6 +1,7 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MoviesService } from '../services/movies.service';
-import { Movie } from '../models/movie.model';
+import { Movie } from '../services/models/movie.model';
+import { MovieFilterComponent } from '../components/movie-filter/movie-filter.component';
 
 
 @Component({
@@ -10,19 +11,27 @@ import { Movie } from '../models/movie.model';
 })
 export class MoviesListComponent implements AfterViewInit {
 
+  @ViewChild(MovieFilterComponent, {static: false})
+  private movieFilterRef!: MovieFilterComponent;
+
   movies: Array<Movie> = [];
 
-  constructor(private readonly moviesService: MoviesService) {
-  }
-
+  constructor(private readonly moviesService: MoviesService) { }
 
   ngAfterViewInit(): void {
-    this.moviesService.getMovies()
-      .subscribe(
-        (movies: Array<Movie>) => this.movies = movies, // Podobné `then` metodě
-        (error) => console.log(error), // Podobné `catch` metodě
-        () => {} // Krajně podobné `complete` metodě. Tato funkce zde ani nemusí být, jelikož je prázdná.
-      );
+    this.filter()
   }
 
+  filter() {
+    const movieFilter = this.movieFilterRef.movieFilter;
+    this.moviesService.getMovies(movieFilter)
+      .subscribe(
+        (movies: Array<Movie>) => this.movies = movies,
+        (error) => console.error(),
+        () => {}
+        );
+  }
 }
+
+
+
