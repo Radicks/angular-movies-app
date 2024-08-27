@@ -30,5 +30,15 @@
       </div>
     </div>
   </div>
+
+  <app-modal header="Hello, world!" [isClosed]="isModalClosed" (crossClicked)="isModalClosed = true">
+    <p>
+      Ukázka <code>ng-contentu</code> v <strong>Angular</strong> projektu
+    </p>
+  
+    <button footer type="button" class="btn btn-primary">Uložit</button>
+    <button footer type="button" class="btn btn-secondary" (click)="isModalClosed = true">Zavřít</button>
+  </app-modal>
+
   
 
