@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { ActorsListComponent } from './actors-list/actors-list.component';
 import { ActorsFilterComponent } from './components/actors-filter/actors-filter.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { ActorModifyComponent } from './actor-modify/actor-modify.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ModalComponent } from './components/modal/modal.component';
     MovieFilterComponent,
     ActorsListComponent,
     ActorsFilterComponent,
-    ModalComponent
+    ModalComponent,
+    ActorModifyComponent
   ],
   imports: [
     BrowserModule,

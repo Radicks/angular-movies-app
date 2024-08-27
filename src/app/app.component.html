@@ -16,7 +16,7 @@
           <button type="button" class="btn btn-success btn-sm">
             Přidat film
           </button>
-          <button type="button" class="btn btn-success btn-sm">
+          <button type="button" class="btn btn-success btn-sm" (click)="isActorModalClosed = false">
             Přidat osobnost
           </button>
         </div>
@@ -31,13 +31,11 @@
     </div>
   </div>
 
-  <app-modal header="Hello, world!" [isClosed]="isModalClosed" (crossClicked)="isModalClosed = true">
-    <p>
-      Ukázka <code>ng-contentu</code> v <strong>Angular</strong> projektu
-    </p>
+  <app-modal header="Hello, world!" [isClosed]="isActorModalClosed" (crossClicked)="isActorModalClosed = true">
+    <app-actor-modify></app-actor-modify>
   
-    <button footer type="button" class="btn btn-primary">Uložit</button>
-    <button footer type="button" class="btn btn-secondary" (click)="isModalClosed = true">Zavřít</button>
+    <button footer type="button" class="btn btn-primary" (click)="addActor()">Uložit</button>
+    <button footer type="button" class="btn btn-secondary" (click)="isActorModalClosed = true">Zavřít</button>
   </app-modal>
 
   

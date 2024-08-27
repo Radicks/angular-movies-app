@@ -41,4 +41,8 @@ export class ActorsService {
 
     return params;
   }
+
+  addPerson(actor: Person | null) {
+    return this.httpClient.post(`/api/people`, actor)
+  }
 }
