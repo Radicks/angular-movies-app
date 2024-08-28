@@ -45,4 +45,20 @@ export class ActorsService {
   addPerson(actor: Person | null) {
     return this.httpClient.post(`/api/people`, actor)
   }
+
+  removePerson(person: Person) {
+    return this.httpClient.delete(`/api/people/${person._id}`);
+  }
+
+  editPerson(person: Person) {
+    const body = {
+      name: person.name,
+      birthDate: person.birthDate,
+      country: person.country,
+      biography: person.biography,
+      role: person.role
+    };
+
+    return this.httpClient.put(`/api/people/${person._id}`, body);
+  }
 }

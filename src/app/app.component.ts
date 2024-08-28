@@ -27,12 +27,11 @@ export class AppComponent {
       this.actorsService.addPerson(this.actorAddRef.actor)
         .subscribe(
           (response) => {
-            this.router.onSameUrlNavigation = 'reload'; //Vynutí angular zavolat ngAfterViewInit
-            this.router.routeReuseStrategy.shouldReuseRoute = function () { //Vynutí angular zavolat ngAfterViewInit
+            this.router.onSameUrlNavigation = 'reload';
+            this.router.routeReuseStrategy.shouldReuseRoute = function () {
               return false;
             }
-            this.actorAddRef.formRef.resetForm(); //Reset formuláře
-
+            this.actorAddRef.formRef.resetForm();
             this.isActorModalClosed = true;
             this.router.navigate(['/actors-list']);
           }, (error) => {
