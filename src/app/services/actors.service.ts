@@ -32,6 +32,10 @@ export class ActorsService {
     );
   }
 
+  getPerson(id: string): Observable<Person> {
+    return this.httpClient.get<Person>(`/api/people/${id}`);
+  }
+
   private getHttpParams(filter: ActorsFilter): HttpParams {
     let params = new HttpParams();
 
