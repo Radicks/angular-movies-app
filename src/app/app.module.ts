@@ -11,6 +11,7 @@ import { ActorsListComponent } from './actors-list/actors-list.component';
 import { ActorsFilterComponent } from './components/actors-filter/actors-filter.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ActorModifyComponent } from './actor-modify/actor-modify.component';
+import { MovieModifyComponent } from './movie-modify/movie-modify.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ActorModifyComponent } from './actor-modify/actor-modify.component';
     ActorsListComponent,
     ActorsFilterComponent,
     ModalComponent,
-    ActorModifyComponent
+    ActorModifyComponent,
+    MovieModifyComponent
   ],
   imports: [
     BrowserModule,

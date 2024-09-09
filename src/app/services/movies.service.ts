@@ -13,6 +13,31 @@ export class MoviesService {
     private readonly httpClient: HttpClient
   ) { }
 
+  addMovie(movie: Movie) {
+    const body = this.getMovieRequestBody(movie);
+    return this.httpClient.post('/api/movies', body);
+  }
+  
+  removeMovie(movie: Movie) {
+    return this.httpClient.delete(`/api/movies/${movie._id}`);
+  }
+  
+  editMovie(movie: Movie) {
+    const body = this.getMovieRequestBody(movie);
+    return this.httpClient.put(`/api/movies/${movie._id}`, body);
+  }
+  
+  private getMovieRequestBody(movie: Movie): object {
+    return {
+      name: movie.name,
+      directorID: movie.directorID,
+      actorIDs: movie.actorIDs,
+      isAvailable: movie.isAvailable,
+      genres: movie.genres,
+      year: movie.year
+    };
+  }
+
   getMovies(movieFilter: MovieFilter): Observable<Array<Movie>> {
     let params = new HttpParams();
     for (const key in movieFilter) { // Projíždíme každou vlastnost modelu a přidáváme ji do httpParams, když není null.

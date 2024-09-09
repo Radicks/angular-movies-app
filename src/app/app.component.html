@@ -13,7 +13,7 @@
   
       <div class="col-sm">
         <div class="btn-group float-right mr-3 mt-1">
-          <button type="button" class="btn btn-success btn-sm">
+          <button type="button" class="btn btn-success btn-sm" (click)="isMovieModalClosed = false">
             Přidat film
           </button>
           <button type="button" class="btn btn-success btn-sm" (click)="isActorModalClosed = false">
@@ -31,12 +31,21 @@
     </div>
   </div>
 
-  <app-modal header="Hello, world!" [isClosed]="isActorModalClosed" (crossClicked)="isActorModalClosed = true">
+  <app-modal header="Přidat osobnost" [isClosed]="isActorModalClosed" (crossClicked)="isActorModalClosed = true">
     <app-actor-modify></app-actor-modify>
   
     <button footer type="button" class="btn btn-primary" (click)="addActor()">Uložit</button>
     <button footer type="button" class="btn btn-secondary" (click)="isActorModalClosed = true">Zavřít</button>
   </app-modal>
+
+  <app-modal header="Přidat film" [isClosed]="isMovieModalClosed" (crossClicked)="isMovieModalClosed = true">
+    <app-movie-modify></app-movie-modify>
+  
+    <button footer type="button" class="btn btn-primary" (click)="addMovie()">Uložit</button>
+    <button footer type="button" class="btn btn-secondary" (click)="isMovieModalClosed = true">Zavřít</button>
+  </app-modal>
+
+  
 
   
 

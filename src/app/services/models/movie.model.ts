@@ -1,5 +1,7 @@
 export class Movie {
 
+  public _id: string | null = null;
+
     constructor(
       public name: string,
       public directorID: string,
@@ -9,4 +11,7 @@ export class Movie {
       public year: number
     ) {}
   
+    static createEmpty() {
+      return new Movie('', '', [], false, [], 0);
+    }
   }
