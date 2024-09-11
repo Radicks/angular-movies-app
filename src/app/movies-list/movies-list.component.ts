@@ -23,6 +23,7 @@ export class MoviesListComponent implements AfterViewInit {
 
   public isDetailModalClosed: boolean = true;
   public isEditModalClosed: boolean = true;
+  
   @ViewChild(MovieModifyComponent, {static: false})
   private movieEditRef!: MovieModifyComponent;
 
